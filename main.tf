@@ -16,7 +16,7 @@ data "aws_availability_zones" "available" {
 }
 
 locals {
-  cluster_name = "education-eks-cluster"
+  cluster_name = "g35-eks-cluster"
 }
 
 resource "random_string" "suffix" {
@@ -28,10 +28,10 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.0.0"
 
-  name = "education-vpc"
+  name = "g35-vpc"
 
   tags = {
-    Name = "postech-vpc"
+    Name = "g35-vpc"
   }
 
   cidr = "10.0.0.0/16"
